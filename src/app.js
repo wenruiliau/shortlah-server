@@ -40,8 +40,6 @@ db.once('open', function () {
   console.log('Connected successfully');
 });
 
-console.log('HEROKUUUU', db);
-
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
