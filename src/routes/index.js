@@ -3,7 +3,7 @@ const UrlModel = require('../models');
 
 const router = express.Router();
 
-router.post('/create', async (req, res) => {
+router.post('/api/create', async (req, res) => {
   const data = req.body.data[0];
 
   const regexExp = /^http/;
@@ -46,7 +46,7 @@ router.post('/create', async (req, res) => {
   }
 });
 
-router.get('/:slug', async (req, res) => {
+router.get('/api/:slug', async (req, res) => {
   const urlObj = await UrlModel.findOne({ slug: req.params.slug })
     .select('url')
     .lean();
